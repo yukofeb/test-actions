@@ -14,3 +14,11 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: Install packages
+      run: |
+        cd test-actions
+        yarn install
+    - name: Run tests
+      run: |
+        cd test-actions
+        yarn test
