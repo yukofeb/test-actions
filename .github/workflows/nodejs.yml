@@ -18,9 +18,12 @@ jobs:
         run: |
           cd test-actions
           yarn install
-      - name: check current directory
+      - name: check info
         run: |
+          pwd
           ls -la
+          echo ${HOME}
+          echo ${GITHUB_WORKSPACE}
       - name: run tests
         run: |
           cd test-actions
