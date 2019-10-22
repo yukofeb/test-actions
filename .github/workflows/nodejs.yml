@@ -24,6 +24,7 @@ jobs:
         run: |
           pwd
           ls -la
+          echo ${appdir}
           echo ${HOME}
           echo ${GITHUB_WORKSPACE}
       - name: run tests
