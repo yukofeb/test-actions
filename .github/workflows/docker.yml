@@ -1,6 +1,6 @@
 name: docker
 
-on: [push]
+on: 
 
 jobs:
   hello_world_job:
