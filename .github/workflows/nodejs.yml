@@ -4,6 +4,8 @@ on: [push]
 
 jobs:
   build:
+    env:
+      appdir: test-actions
 
     runs-on: ubuntu-latest
 
@@ -16,7 +18,7 @@ jobs:
           node-version: '10.x'
       - name: install packages
         run: |
-          cd test-actions
+          cd ${appdir}
           yarn install
       - name: check info
         run: |
@@ -26,5 +28,5 @@ jobs:
           echo ${GITHUB_WORKSPACE}
       - name: run tests
         run: |
-          cd test-actions
+          cd ${appdir}
           yarn test
