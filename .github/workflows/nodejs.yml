@@ -1,0 +1,23 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: setup-node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: install packages
+        run: |
+          cd test-actions
+          yarn install
+      - name: run tests
+        run: |
+          yarn test
